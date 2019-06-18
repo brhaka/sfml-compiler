@@ -20,9 +20,9 @@ The clock can be installed through Atom. Alternatively, you can use `apm` on any
 * Customizable build options.
 * Customizable dlls path.
 * Customizable resources path.
-* Customizable SFML path..
-* Customizable keybinding used for build.
-* Is possible to create a text file with build output (errors, if any).
+* Customizable SFML path.
+* Customizable keybinding used to build.
+* sfml-compiler can create a text file with build output (errors, if any).
 * Choose between delete or maintain bat file used for compiling.
 
 ### Contributing
