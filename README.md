@@ -9,9 +9,21 @@
 
 This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on windows.
 
-You can install it by running ```apm install sfml-compiler``` on any CMD window.
+Any questions? Read our [Wiki](https://github.com/brhaka/sfml-compiler/wiki)
 
-For requirements, installation and usage read the [Wiki](https://github.com/brhaka/sfml-compiler/wiki)
+### Installation
+The clock can be installed through Atom. Alternatively, you can use `apm` on any CMD window:
+
+`apm install sfml-compiler`
+
+### Features
+* Customizable build options.
+* Customizable dlls path.
+* Customizable resources path.
+* Customizable SFML path..
+* Customizable keybinding used for build.
+* Is possible to create a text file with build output (errors, if any).
+* Choose between delete or maintain bat file used for compiling.
 
 ### Contributing
 **Like what you see?** Please, feel free to fork this repository, and make any change you like. If you
