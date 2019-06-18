@@ -12,7 +12,10 @@ This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on w
 Any questions? Read our [wiki](https://github.com/brhaka/sfml-compiler/wiki).
 
 ### Installation
-Packages can be installed through Atom. Alternatively, you can use `apm` on any CMD window:
+[Requirements :link:](https://github.com/brhaka/sfml-compiler/wiki/Requirements)
+[Installation guide :link:](https://github.com/brhaka/sfml-compiler/wiki/Installation)
+
+Packages can be installed through [Atom](https://atom.io/packages/sfml-compiler). Alternatively, you can use `apm` on any CMD window:
 
 `apm install sfml-compiler`
 
