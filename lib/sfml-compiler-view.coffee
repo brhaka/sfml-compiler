@@ -3,7 +3,7 @@ class SfmlCompileView
   constructor: (serializedState) ->
     # Create root element
     @element = document.createElement('div')
-    @element.classList.add('sfml-compile')
+    @element.classList.add('sfml-compiler')
 
     # Create message element
     message = document.createElement('div')

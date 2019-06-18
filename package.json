@@ -1,13 +1,13 @@
 {
-  "name": "sfml-compile",
-  "main": "./lib/sfml-compile",
-  "version": "0.5.4",
-  "description": "Can be used to compile SFML stuff on windows",
+  "name": "sfml-compiler",
+  "main": "./lib/sfml-compiler",
+  "version": "1.0.0",
+  "description": "SFML compiler for Windows",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "sfml-compile:toggle"
+    "atom-workspace": "sfml-compiler:toggle"
   },
-  "repository": "https://github.com/66Adam66/sfml-compile",
+  "repository": "https://github.com/brhaka/sfml-compiler",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

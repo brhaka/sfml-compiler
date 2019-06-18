@@ -1,4 +1,4 @@
-SfmlCompile = require '../lib/sfml-compile'
+SfmlCompile = require '../lib/sfml-compiler'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
@@ -10,30 +10,30 @@ describe "SfmlCompile", ->
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('sfml-compile')
+    activationPromise = atom.packages.activatePackage('sfml-compiler')
 
-  describe "when the sfml-compile:toggle event is triggered", ->
+  describe "when the sfml-compiler:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.sfml-compile')).not.toExist()
+      expect(workspaceElement.querySelector('.sfml-compiler')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'sfml-compile:toggle'
+      atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.sfml-compile')).toExist()
+        expect(workspaceElement.querySelector('.sfml-compiler')).toExist()
 
-        sfmlCompileElement = workspaceElement.querySelector('.sfml-compile')
+        sfmlCompileElement = workspaceElement.querySelector('.sfml-compiler')
         expect(sfmlCompileElement).toExist()
 
         sfmlCompilePanel = atom.workspace.panelForItem(sfmlCompileElement)
         expect(sfmlCompilePanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'sfml-compile:toggle'
+        atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
         expect(sfmlCompilePanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -45,18 +45,18 @@ describe "SfmlCompile", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.sfml-compile')).not.toExist()
+      expect(workspaceElement.querySelector('.sfml-compiler')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'sfml-compile:toggle'
+      atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        sfmlCompileElement = workspaceElement.querySelector('.sfml-compile')
+        sfmlCompileElement = workspaceElement.querySelector('.sfml-compiler')
         expect(sfmlCompileElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'sfml-compile:toggle'
+        atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
         expect(sfmlCompileElement).not.toBeVisible()

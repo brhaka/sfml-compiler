@@ -1,6 +1,6 @@
 {CompositeDisposable} = require 'atom'
 {BufferedProcess} = require 'atom'
-SfmlCompileView = require './sfml-compile-view'
+SfmlCompileView = require './sfml-compiler-view'
 {CompositeDisposable} = require 'atom'
 
 module.exports = SfmlCompile =
@@ -54,7 +54,7 @@ module.exports = SfmlCompile =
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'sfml-compile:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'sfml-compiler:toggle': => @toggle()
 
   deactivate: ->
     @modalPanel.destroy()
@@ -76,21 +76,21 @@ module.exports = SfmlCompile =
     justDie = atom.project.getPaths()[0]
     args = [justDie]
     doLog = " 2> compiling_error.txt"
-    resourceFiles = atom.config.get("sfml-compile.regularFiles.resourcesDir")
-    if atom.config.get("sfml-compile.regularFiles.sameAsMain") == true
+    resourceFiles = atom.config.get("sfml-compiler.regularFiles.resourcesDir")
+    if atom.config.get("sfml-compiler.regularFiles.sameAsMain") == true
       resourceFiles = justDie
-    dllFiles = atom.config.get("sfml-compile.regularFiles.dllsDir")
+    dllFiles = atom.config.get("sfml-compiler.regularFiles.dllsDir")
     deleteDatBatM8 = "\nREM DO IT! COME ON! KILL ME NOW! I'M HERE!\ndel "+justDie+"\\compile.bat"
-    if atom.config.get("sfml-compile.deleteBat") == false
+    if atom.config.get("sfml-compiler.deleteBat") == false
       deleteDatBatM8 = ""
-    if atom.config.get("sfml-compile.createLog") == false
+    if atom.config.get("sfml-compiler.createLog") == false
       doLog = ""
     hideCMD = ""
-    if atom.config.get("sfml-compile.hideTerminal") == true
+    if atom.config.get("sfml-compiler.hideTerminal") == true
       hideCMD = " -mwindows"
 
     # Kill me, please
-    someStuff = "@RD /S /Q \""+justDie+"\\build"+"\"\n"+"mkdir "+justDie+"\\build\n"+"cd "+justDie+"\n"+"g++ -Wall -g "+atom.config.get("sfml-compile.compilerOptions")+" -I"+atom.config.get("sfml-compile.sfmlLocation")+" -c \""+justDie+"\\main.cpp\""+" -o build\\main.o"+doLog+"\n"+"findstr \"^\" \"compiling_error.txt\" || del \"compiling_error.txt\"\n"+"g++ -LC:\\SFML\\lib -o \"build\\main.exe\" build\\main.o   -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network"+hideCMD+"\n"+"xcopy /s "+dllFiles+"*.dll "+justDie+"\\build\n"+"copy "+resourceFiles+"\\*.png "+justDie+"\\build"+"\ncopy "+resourceFiles+"\\*.ttf "+justDie+"\\build"+"\ncopy "+resourceFiles+"\\*.mp3 "+justDie+"\\build\n"+"cd "+justDie+"\\build\n"+"main.exe"+deleteDatBatM8
+    someStuff = "@RD /S /Q \""+justDie+"\\build"+"\"\n"+"mkdir "+justDie+"\\build\n"+"cd "+justDie+"\n"+"g++ -Wall -g "+atom.config.get("sfml-compiler.compilerOptions")+" -I"+atom.config.get("sfml-compiler.sfmlLocation")+" -c \""+justDie+"\\main.cpp\""+" -o build\\main.o"+doLog+"\n"+"findstr \"^\" \"compiling_error.txt\" || del \"compiling_error.txt\"\n"+"g++ -LC:\\SFML\\lib -o \"build\\main.exe\" build\\main.o   -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network"+hideCMD+"\n"+"xcopy /s "+dllFiles+"*.dll "+justDie+"\\build\n"+"copy "+resourceFiles+"\\*.png "+justDie+"\\build"+"\ncopy "+resourceFiles+"\\*.ttf "+justDie+"\\build"+"\ncopy "+resourceFiles+"\\*.mp3 "+justDie+"\\build\n"+"cd "+justDie+"\\build\n"+"main.exe"+deleteDatBatM8
 
     fs.writeFile atom.project.getPaths()[0]+"\\compile.bat", someStuff
 
