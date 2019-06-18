@@ -1,13 +1,15 @@
 # sfml-compiler
 
+[![Installs!](https://img.shields.io/apm/dm/sfml-compiler.svg?style=flat-square)](https://atom.io/sfml-compiler)
+
 [![GitHub stars](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Star)](https://github.com/brhaka/sfml-compiler)
 [![GitHub forks](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Fork)](https://github.com/brhaka/sfml-compiler)
 
-This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on windows
+This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on windows.
 
 You can install it by running ```apm install sfml-compiler``` on any CMD window.
 
-For requirements, installation and usage read the [wiki](https://github.com/brhaka/sfml-compiler/wiki)
+For requirements, installation and usage read the [Wiki](https://github.com/brhaka/sfml-compiler/wiki)
 
 ### Contributing
 **Like what you see?** Please, feel free to fork this repository, and make any change you like. If you
