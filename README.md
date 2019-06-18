@@ -12,7 +12,7 @@ This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on w
 Any questions? Read our [Wiki](https://github.com/brhaka/sfml-compiler/wiki)
 
 ### Installation
-The clock can be installed through Atom. Alternatively, you can use `apm` on any CMD window:
+Packages can be installed through Atom. Alternatively, you can use `apm` on any CMD window:
 
 `apm install sfml-compiler`
 
