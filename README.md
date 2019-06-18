@@ -32,4 +32,4 @@ named after the feature you want to implement, then make a pull request from tha
 branch. Also, before actually getting to work, just consider I'm trying to keep
 this package as simple and minimal as possible!
 
-#### The base of this repository is a clone of [sfml-compile](https://github.com/87cm1n3r/sfml-compiler). We made some fixes and added better documentation.
+###### The base of this repository is a clone of [sfml-compile](https://github.com/87cm1n3r/sfml-compiler). We made some fixes and added better documentation.
