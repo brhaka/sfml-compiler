@@ -1,5 +1,5 @@
-SfmlCompileView = require '../lib/sfml-compiler-view'
+SfmlCompilerView = require '../lib/sfml-compiler-view'
 
-describe "SfmlCompileView", ->
+describe "SfmlCompilerView", ->
   it "has one valid test", ->
     expect("life").toBe "easy"

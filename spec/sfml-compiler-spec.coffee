@@ -1,11 +1,11 @@
-SfmlCompile = require '../lib/sfml-compiler'
+SfmlCompiler = require '../lib/sfml-compiler'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "SfmlCompile", ->
+describe "SfmlCompiler", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
@@ -28,13 +28,13 @@ describe "SfmlCompile", ->
       runs ->
         expect(workspaceElement.querySelector('.sfml-compiler')).toExist()
 
-        sfmlCompileElement = workspaceElement.querySelector('.sfml-compiler')
-        expect(sfmlCompileElement).toExist()
+        SfmlCompilerElement = workspaceElement.querySelector('.sfml-compiler')
+        expect(SfmlCompilerElement).toExist()
 
-        sfmlCompilePanel = atom.workspace.panelForItem(sfmlCompileElement)
-        expect(sfmlCompilePanel.isVisible()).toBe true
+        SfmlCompilerPanel = atom.workspace.panelForItem(SfmlCompilerElement)
+        expect(SfmlCompilerPanel.isVisible()).toBe true
         atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
-        expect(sfmlCompilePanel.isVisible()).toBe false
+        expect(SfmlCompilerPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -56,7 +56,7 @@ describe "SfmlCompile", ->
 
       runs ->
         # Now we can test for view visibility
-        sfmlCompileElement = workspaceElement.querySelector('.sfml-compiler')
-        expect(sfmlCompileElement).toBeVisible()
+        SfmlCompilerElement = workspaceElement.querySelector('.sfml-compiler')
+        expect(SfmlCompilerElement).toBeVisible()
         atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
-        expect(sfmlCompileElement).not.toBeVisible()
+        expect(SfmlCompilerElement).not.toBeVisible()

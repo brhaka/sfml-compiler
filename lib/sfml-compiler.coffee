@@ -1,10 +1,10 @@
 {CompositeDisposable} = require 'atom'
 {BufferedProcess} = require 'atom'
-SfmlCompileView = require './sfml-compiler-view'
+SfmlCompilerView = require './sfml-compiler-view'
 {CompositeDisposable} = require 'atom'
 
-module.exports = SfmlCompile =
-  sfmlCompileView: null
+module.exports = SfmlCompiler =
+  SfmlCompilerView: null
   modalPanel: null
   subscriptions: null
   config:
@@ -47,8 +47,8 @@ module.exports = SfmlCompile =
       default: ''
 
   activate: (state) ->
-    @sfmlCompileView = new SfmlCompileView(state.sfmlCompileViewState)
-    @modalPanel = atom.workspace.addModalPanel(item: @sfmlCompileView.getElement(), visible: false)
+    @SfmlCompilerView = new SfmlCompilerView(state.SfmlCompilerViewState)
+    @modalPanel = atom.workspace.addModalPanel(item: @SfmlCompilerView.getElement(), visible: false)
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
@@ -59,10 +59,10 @@ module.exports = SfmlCompile =
   deactivate: ->
     @modalPanel.destroy()
     @subscriptions.dispose()
-    @sfmlCompileView.destroy()
+    @SfmlCompilerView.destroy()
 
   serialize: ->
-    sfmlCompileViewState: @sfmlCompileView.serialize()
+    SfmlCompilerViewState: @SfmlCompilerView.serialize()
 
   toggle: ->
     console.log 'Compiling SFML'

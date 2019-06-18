@@ -1,5 +1,5 @@
 module.exports =
-class SfmlCompileView
+class SfmlCompilerView
   constructor: (serializedState) ->
     # Create root element
     @element = document.createElement('div')
@@ -7,7 +7,7 @@ class SfmlCompileView
 
     # Create message element
     message = document.createElement('div')
-    message.textContent = "The SfmlCompile package is Alive! It's ALIVE!"
+    message.textContent = "The SfmlCompiler package is Alive! It's ALIVE!"
     message.classList.add('message')
     @element.appendChild(message)
 
