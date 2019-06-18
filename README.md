@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/apm/l/sfml-compiler.svg?style=flat-square)](https://github.com/brhaka/sfml-compiler/blob/master/LICENSE)
 
 [![GitHub stars](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Star)](https://github.com/brhaka/sfml-compiler)
-[![GitHub forks](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Fork)](https://github.com/brhaka/sfml-compiler)
+[![GitHub forks](https://img.shields.io/github/forks/brhaka/sfml-compiler.svg?style=social&label=Fork)](https://github.com/brhaka/sfml-compiler)
 
 This package can be used to compile [SFML](https://www.sfml-dev.org/) stuff on windows, inside your favorite text editor: [Atom](https://atom.io/)
 
