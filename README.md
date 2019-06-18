@@ -1,6 +1,8 @@
 # sfml-compiler
 
-[![Installs!](https://img.shields.io/apm/dm/sfml-compiler.svg?style=flat-square)](https://atom.io/sfml-compiler)
+[![Installs!](https://img.shields.io/apm/dm/sfml-compiler.svg?style=flat-square)](https://atom.io/packages/sfml-compiler)
+[![Version!](https://img.shields.io/apm/v/sfml-compiler.svg?style=flat-square)](https://atom.io/packages/sfml-compiler)
+[![License](https://img.shields.io/apm/l/sfml-compiler.svg?style=flat-square)](https://github.com/brhaka/sfml-compiler/blob/master/LICENSE)
 
 [![GitHub stars](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Star)](https://github.com/brhaka/sfml-compiler)
 [![GitHub forks](https://img.shields.io/github/stars/brhaka/sfml-compiler.svg?style=social&label=Fork)](https://github.com/brhaka/sfml-compiler)
