@@ -25,7 +25,7 @@ module.exports = SfmlCompiler =
           type: 'string'
           default: "c:\\dlls\\"
     deleteBat:
-      title: 'Delete compile.bat after compilation'
+      title: 'Delete compiler.bat after compilation'
       type: 'boolean'
       default: true
     createLog:
@@ -72,15 +72,21 @@ module.exports = SfmlCompiler =
 
     fs = require "fs"
 
-    command = "compile.bat"
+    editor = atom.workspace.getActivePaneItem()
+    file = editor?.buffer.file
+    pathToCurrentFile = file?.path
+    pathToCurrentWorkingDir =
+    atom.notifications.addError(pathToCurrentWorkingDir)
+
+    command = "compiler.bat"
     path = atom.project.getPaths()[0]
-    args = [path]
+    args = [pathToCurrentWorkingDir]
     doLog = " 2> compiling_error.txt"
     resourceFiles = atom.config.get("sfml-compiler.regularFiles.resourcesDir")
     if atom.config.get("sfml-compiler.regularFiles.sameAsMain") == true
-      resourceFiles = path
+      resourceFiles = pathToCurrentWorkingDir
     dllFiles = atom.config.get("sfml-compiler.regularFiles.dllsDir")
-    deleteDatBatM8 = "\nREM DO IT! COME ON! KILL ME NOW! I'M HERE!\ndel "+path+"\\compile.bat"
+    deleteDatBatM8 = "del "+pathToCurrentWorkingDir+"\\compiler.bat"
     if atom.config.get("sfml-compiler.deleteBat") == false
       deleteDatBatM8 = ""
     if atom.config.get("sfml-compiler.createLog") == false
@@ -89,10 +95,9 @@ module.exports = SfmlCompiler =
     if atom.config.get("sfml-compiler.hideTerminal") == true
       hideCMD = " -mwindows"
 
-    # Kill me, please
-    someStuff = "@RD /S /Q \""+path+"\\build"+"\"\n"+"mkdir "+path+"\\build\n"+"cd "+path+"\n"+"g++ -Wall -g "+atom.config.get("sfml-compiler.compilerOptions")+" -I"+atom.config.get("sfml-compiler.sfmlLocation")+" -c \""+path+"\\main.cpp\""+" -o build\\main.o"+doLog+"\n"+"findstr \"^\" \"compiling_error.txt\" || del \"compiling_error.txt\"\n"+"g++ -LC:\\SFML\\lib -o \"build\\main.exe\" build\\main.o   -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network"+hideCMD+"\n"+"xcopy /s "+dllFiles+"*.dll "+path+"\\build\n"+"copy "+resourceFiles+"\\*.png "+path+"\\build"+"\ncopy "+resourceFiles+"\\*.ttf "+path+"\\build"+"\ncopy "+resourceFiles+"\\*.mp3 "+path+"\\build\n"+"cd "+path+"\\build\n"+"main.exe"+deleteDatBatM8
+    someStuff = "@RD /S /Q \""+pathToCurrentWorkingDir+"\\build"+"\"\n"+"mkdir "+pathToCurrentWorkingDir+"\\build\n"+"cd "+pathToCurrentWorkingDir+"\n"+"g++ -Wall -g "+atom.config.get("sfml-compiler.compilerOptions")+" -I"+atom.config.get("sfml-compiler.sfmlLocation")+" -c \""+pathToCurrentWorkingDir+"\\main.cpp\""+" -o build\\main.o"+doLog+"\n"+"findstr \"^\" \"compiling_error.txt\" || del \"compiling_error.txt\"\n"+"g++ -LC:\\SFML\\lib -o \"build\\main.exe\" build\\main.o   -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network"+hideCMD+"\n"+"xcopy /s "+dllFiles+"*.dll "+pathToCurrentWorkingDir+"\\build\n"+"copy "+resourceFiles+"\\*.png "+pathToCurrentWorkingDir+"\\build"+"\ncopy "+resourceFiles+"\\*.ttf "+pathToCurrentWorkingDir+"\\build"+"\ncopy "+resourceFiles+"\\*.mp3 "+pathToCurrentWorkingDir+"\\build\n"+"cd "+pathToCurrentWorkingDir+"\\build\n"+"main.exe"+deleteDatBatM8
 
-    fs.writeFile atom.project.getPaths()[0]+"\\compile.bat", someStuff
+    fs.writeFile pathToCurrentWorkingDir + "\\compiler.bat", someStuff
 
     # Default to where the user opened atom
     options =
@@ -112,7 +117,8 @@ module.exports = SfmlCompiler =
     new BufferedProcess({command, args, options, stdout, stderr, exit})
 
     setTimeout ->
-      fs.exists path+"\\compiling_error.txt", (exists) ->
-        log = fs.readFileSync path+'\\compiling_error.txt', 'utf8'
-        atom.notifications.addError(log)
+      fs.exists pathToCurrentWorkingDir+"\\compiling_error.txt", (exists) ->
+        log = fs.readFileSync pathToCurrentWorkingDir+'\\compiling_error.txt', 'utf8'
+        if log?
+            atom.notifications.addError(log)
     , 1000
