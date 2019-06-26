@@ -13,4 +13,4 @@
 ## [V0.2.3]()
 ### Small fixes
 ## [V1.0.0]()
-### Fixed problems with path and compiling
+### Switched from CoffeeScript to JavaScript and fixed problems with path & compiling
