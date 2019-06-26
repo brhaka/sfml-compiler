@@ -12,3 +12,5 @@
 ### Small fixes
 ## [V0.2.3]()
 ### Small fixes
+## [V1.0.0]()
+### Fixed problems with path and compiling
