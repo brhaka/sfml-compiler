@@ -26,3 +26,5 @@
 ### Bug fixes
 ## [V1.2.3]()
 ### Readme fixes
+## [V1.2.4]()
+### Bug fixes
