@@ -29,6 +29,7 @@ Packages can be installed through [Atom](https://atom.io/packages/sfml-compiler)
 * Customizable keybinding used to build.
 * sfml-compiler can create a text file with build output (errors, if any).
 * Choose between delete or maintain bat file used for compiling.
+* Option to run compilation result
 
 ### Contributing
 **Like what you see?** Please, feel free to fork this repository, and make any change you like. If you
