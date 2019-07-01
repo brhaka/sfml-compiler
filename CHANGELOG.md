@@ -22,3 +22,5 @@
 ### Now the .exe is executed after compilation (if it's set to true in options)
 ## [V1.2.1]()
 ### Fixes on ChangeLog
+## [V1.2.2]()
+### Bug fixes
