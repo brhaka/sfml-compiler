@@ -18,5 +18,7 @@
 ### Added fix to missing dll
 ## [V1.1.1]()
 ### Added missing update on ChangeLog
-## [V1.1.2]()
+## [V1.2.0]()
 ### Now the .exe is executed after compilation (if it's set to true in options)
+## [V1.2.1]()
+### Fixes on ChangeLog
