@@ -24,3 +24,5 @@
 ### Fixes on ChangeLog
 ## [V1.2.2]()
 ### Bug fixes
+## [V1.2.3]()
+### Readme fixes
