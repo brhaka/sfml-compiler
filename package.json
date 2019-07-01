@@ -1,7 +1,7 @@
 {
   "name": "sfml-compiler",
   "main": "./lib/sfml-compiler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SFML compiler for Windows",
   "keywords": [],
   "activationCommands": {
