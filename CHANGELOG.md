@@ -14,3 +14,7 @@
 ### Small fixes
 ## [V1.0.0]()
 ### Switched from CoffeeScript to JavaScript and fixed problems with path & compiling
+## [V1.1.0]()
+### Added fix to missing dll
+## [V1.1.1]()
+### Added missing update on ChangeLog
