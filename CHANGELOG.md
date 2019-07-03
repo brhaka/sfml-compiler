@@ -30,3 +30,5 @@
 #### Bug fixes
 ### [V1.3.0](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.0)
 #### Now sfml-compiler can copy files to /build/ folder, improvements, bug fixes and enhanced ChangeLog
+### [V1.3.1](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.1)
+#### Improved settings and added more file/resources 'types'
