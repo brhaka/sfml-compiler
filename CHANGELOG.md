@@ -32,3 +32,5 @@
 #### Now sfml-compiler can copy files to /build/ folder, improvements, bug fixes and enhanced ChangeLog
 ### [V1.3.1](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.1)
 #### Improved settings and added more file/resources 'types'
+### [V1.3.2](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.2)
+#### Added error message when trying to compile 'non .cpp' files.
