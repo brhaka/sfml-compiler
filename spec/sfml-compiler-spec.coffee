@@ -12,7 +12,7 @@ describe "SfmlCompiler", ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('sfml-compiler')
 
-  describe "when the sfml-compiler:toggle event is triggered", ->
+  describe "when the sfml-compiler:compile event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
@@ -20,7 +20,7 @@ describe "SfmlCompiler", ->
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
+      atom.commands.dispatch workspaceElement, 'sfml-compiler:compile'
 
       waitsForPromise ->
         activationPromise
@@ -33,7 +33,7 @@ describe "SfmlCompiler", ->
 
         SfmlCompilerPanel = atom.workspace.panelForItem(SfmlCompilerElement)
         expect(SfmlCompilerPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
+        atom.commands.dispatch workspaceElement, 'sfml-compiler:compile'
         expect(SfmlCompilerPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -49,7 +49,7 @@ describe "SfmlCompiler", ->
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
+      atom.commands.dispatch workspaceElement, 'sfml-compiler:compile'
 
       waitsForPromise ->
         activationPromise
@@ -58,5 +58,5 @@ describe "SfmlCompiler", ->
         # Now we can test for view visibility
         SfmlCompilerElement = workspaceElement.querySelector('.sfml-compiler')
         expect(SfmlCompilerElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'sfml-compiler:toggle'
+        atom.commands.dispatch workspaceElement, 'sfml-compiler:compile'
         expect(SfmlCompilerElement).not.toBeVisible()

@@ -34,3 +34,5 @@
 #### Improved settings and added more file/resources 'types'
 ### [V1.3.2](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.2)
 #### Added error message when trying to compile 'non .cpp' files.
+### [V1.3.3](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.3)
+#### Improvements on functions / actions

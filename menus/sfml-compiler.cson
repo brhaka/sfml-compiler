@@ -3,7 +3,7 @@
   'atom-text-editor': [
     {
       'label': 'Compile SFML'
-      'command': 'sfml-compiler:toggle'
+      'command': 'sfml-compiler:compile'
     }
   ]
 'menu': [
@@ -14,7 +14,7 @@
       'submenu': [
         {
           'label': 'Compile'
-          'command': 'sfml-compiler:toggle'
+          'command': 'sfml-compiler:compile'
         }
       ]
     ]
