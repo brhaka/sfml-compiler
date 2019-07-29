@@ -36,3 +36,5 @@
 #### Added error message when trying to compile 'non .cpp' files.
 ### [V1.3.3](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.3)
 #### Improvements on functions / actions
+### [V1.3.4](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.4)
+#### New message when there aren't any open files on Atom
