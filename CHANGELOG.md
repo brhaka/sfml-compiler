@@ -38,3 +38,5 @@
 #### Improvements on functions / actions
 ### [V1.3.4](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.4)
 #### New message when there aren't any open files on Atom
+### [V1.3.5](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.5)
+#### Fixed 'Uncaught Callback' error (Thanks @Kacarott)
