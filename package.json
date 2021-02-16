@@ -7,10 +7,24 @@
   "activationCommands": {
     "atom-workspace": "sfml-compiler:compile"
   },
-  "repository": "https://github.com/brhaka/sfml-compiler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brhaka/sfml-compiler.git"
+  },
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/brhaka/sfml-compiler/issues"
+  },
+  "homepage": "https://github.com/brhaka/sfml-compiler#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "= <=> (=)"
 }
