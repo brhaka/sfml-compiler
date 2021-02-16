@@ -50,3 +50,5 @@
 #### README.md, Wiki, Settings page and issue template improvements. Also, small workflow fix
 ### [V1.5.3](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.3)
 #### Workflow improvements and fixes
+### [V1.5.4](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.4)
+#### Workflow improvements and fixes
