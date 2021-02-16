@@ -40,3 +40,13 @@
 #### New message when there aren't any open files on Atom
 ### [V1.3.5](https://github.com/brhaka/sfml-compiler/releases/tag/v1.3.5)
 #### Fixed 'Uncaught Callback' error (Thanks @Kacarott)
+### [V1.4.0](https://github.com/brhaka/sfml-compiler/releases/tag/v1.4.0)
+#### Create npm-publish.yml (Thanks @jamboyce)
+### [V1.5.0](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.0)
+#### NPM and Github Packages release
+### [V1.5.1](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.1)
+#### NPM fix
+### [V1.5.2](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.2)
+#### README.md, Wiki, Settings page and issue template improvements. Also, small workflow fix
+### [V1.5.3](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.3)
+#### Workflow improvements and fixes
