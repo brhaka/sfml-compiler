@@ -1,7 +1,7 @@
 {
   "name": "sfml-compiler",
   "main": "./lib/sfml-compiler",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Atom SFML compiler",
   "keywords": [],
   "activationCommands": {
