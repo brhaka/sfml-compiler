@@ -2,7 +2,7 @@
   "name": "sfml-compiler",
   "main": "./lib/sfml-compiler",
   "version": "1.5.4",
-  "description": "SFML compiler for Windows",
+  "description": "Atom SFML compiler",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "sfml-compiler:compile"

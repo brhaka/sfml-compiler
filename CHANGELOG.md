@@ -52,3 +52,5 @@
 #### Workflow improvements and fixes
 ### [V1.5.4](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.4)
 #### Workflow improvements and fixes
+### [V1.5.5](https://github.com/brhaka/sfml-compiler/releases/tag/v1.5.5)
+#### New description, workflow enhancing
